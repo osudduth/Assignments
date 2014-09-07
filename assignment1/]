@@ -6,11 +6,11 @@
 
 # takes a string and tells you what it starts with
 def startsWith(word, beginning):
-    for x in range(0, 3):
-        if beginning[x] != word[x]:
-            return False 
+   for letter in :(word)
+       print 'Current Letter :', letter
 
-    return True
+    return False
+
 
 
 if startsWith("oliver", "oli"):
