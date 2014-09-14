@@ -2,18 +2,34 @@
 
 #startswith,uppercase,endswith, reverse, ccat
 
-#returns true if word begins with beginning otherwise false
+#
+# this will tell you the length of the given string 
+#
+def length(word):
+    z = 0
+    for l in word:
+        z = z + 1 
+    return z
 
-# takes a string and tells you what it starts with
+#
+# returns true if word begins with beginning otherwise false
+#
 def startsWith(word, beginning):
-    for x in range(0, 3):
+    for x in range(0, length(beginning) ):
         if beginning[x] != word[x]:
             return False 
-
     return True
 
 
-if startsWith("oliver", "oli"):
+
+
+print (length ("Lucie"))
+
+if startsWith("oliver", "oliv"):
     print("Matched!")
 else:
     print("Not matched!")
+
+
+
+
