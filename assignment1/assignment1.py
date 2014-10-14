@@ -20,8 +20,28 @@ def startsWith(word, beginning):
             return False 
     return True
 
+#
+# This will return true if a string contains another smaller string and false if it doesnt
+#
+
+def contains(word, subWord):
+    for y in range (0, length(word)):
+        print (word[y:])
+
+    return True
 
 
+if contains("wordword", "rdw"):
+    print("does contain")
+else:
+    print("does not contain")
+
+
+
+if contains("wordword", "oliver"):
+    print("does contain")
+else:
+    print("does not contain")
 
 print (length ("Lucie"))
 
@@ -29,7 +49,4 @@ if startsWith("oliver", "oliv"):
     print("Matched!")
 else:
     print("Not matched!")
-
-
-
 
