@@ -25,28 +25,32 @@ def startsWith(word, beginning):
 #
 
 def contains(word, subWord):
-    for y in range (0, length(word)):
-        print (word[y:])
+   if word < subWord:
+       return False
 
-    return True
+   for y in range (0, length(word)):
+        w =  word[y:]
+        if startsWith (w, subWord):
+            return True
+   return False            
 
+
+if contains("wordword", "poop"):
+    print("failed")
+else:
+    print("passed")
 
 if contains("wordword", "rdw"):
-    print("does contain")
+    print ("passed")
 else:
-    print("does not contain")
-
-
-
-if contains("wordword", "oliver"):
-    print("does contain")
-else:
-    print("does not contain")
-
-print (length ("Lucie"))
+    print("failed")
 
 if startsWith("oliver", "oliv"):
-    print("Matched!")
+    print("passed")
 else:
-    print("Not matched!")
+    print("failed")
 
+if contains ("oli", "oliver"):
+    print ("failed")
+else:
+    print ("passed")
