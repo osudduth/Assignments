@@ -25,7 +25,7 @@ def startsWith(word, beginning):
 #
 
 def contains(word, subWord):
-   if word < subWord:
+   if length(word) < length (subWord):
        return False
 
    for y in range (0, length(word)):
@@ -54,3 +54,8 @@ if contains ("oli", "oliver"):
     print ("failed")
 else:
     print ("passed")
+
+if (contains("zza", "azza")):
+    print("failed")
+else:
+    print("passed")
