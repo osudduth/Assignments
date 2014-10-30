@@ -23,7 +23,6 @@ def startsWith(word, beginning):
 #
 # This will return true if a string contains another smaller string and false if it doesnt
 #
-
 def contains(word, subWord):
    if length(word) < length (subWord):
        return False
@@ -32,8 +31,11 @@ def contains(word, subWord):
         w =  word[y:]
         if startsWith (w, subWord):
             return True
-   return False            
+   return False    
 
+        
+def mirror(word):
+    return "oliver"
 
 if contains("wordword", "poop"):
     print("failed")
@@ -59,3 +61,15 @@ if (contains("zza", "azza")):
     print("failed")
 else:
     print("passed")
+
+
+#
+#In this function you will give it a string and it will reverse the order of the letters in the string
+#
+
+
+if "eyb" == mirror("bye"):
+    print("passed")
+else:
+    print("failed")
+
