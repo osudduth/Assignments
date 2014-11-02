@@ -35,7 +35,16 @@ def contains(word, subWord):
 
         
 def mirror(word):
+    x = 0
+    for l in word:
+        print (l)
     return "oliver"
+
+
+
+
+
+
 
 if contains("wordword", "poop"):
     print("failed")
@@ -72,4 +81,5 @@ if "eyb" == mirror("bye"):
     print("passed")
 else:
     print("failed")
+
 
