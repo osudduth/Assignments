@@ -35,17 +35,14 @@ def contains(word, subWord):
 
         
 def mirror(word):
-    x = 0
+    x = length(word) - 1
+    mirrorWord = [None] * length(word)
     for l in word:
-        print (l)
-    return "oliver"
-
-
-
-
-
-
-
+        mirrorWord[x] = l  
+        x = x - 1
+    return  ''.join(mirrorWord)
+            
+    
 if contains("wordword", "poop"):
     print("failed")
 else:
