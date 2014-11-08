@@ -33,7 +33,12 @@ def contains(word, subWord):
             return True
    return False    
 
-        
+
+#
+#In this function you will give it a string and it will reverse the order of the letters in the string
+#
+
+
 def mirror(word):
     x = length(word) - 1
     mirrorWord = [None] * length(word)
@@ -41,6 +46,22 @@ def mirror(word):
         mirrorWord[x] = l  
         x = x - 1
     return  ''.join(mirrorWord)
+
+
+#
+#This function will take in a word and then a subword and it will see if the word ends with the subword
+#
+
+
+def endsWith(word, subword):
+    mirror(word)
+    mirror(subword)
+    if startsWith(mirror(word), mirror(subword)):
+        return True
+    else:
+        return False
+
+
             
     
 if contains("wordword", "poop"):
@@ -69,14 +90,29 @@ else:
     print("passed")
 
 
-#
-#In this function you will give it a string and it will reverse the order of the letters in the string
-#
 
 
 if "eyb" == mirror("bye"):
     print("passed")
 else:
     print("failed")
+
+
+if endsWith ("birthday", "day"):
+    print ("passed")
+else:
+    print ("failed")
+
+
+if endsWith ("birthday", "dag"):
+    print ("passed")
+else:
+    print ("failed")
+
+
+
+
+
+
 
 
