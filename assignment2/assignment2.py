@@ -7,18 +7,18 @@
 #
 def length(word): #defined function and arguments
     z = 0 #defined counter
-    for l in word: #defined type of loop
-        z = z + 1 #told the loop how to run
+    for l in word: #defined a loop that stores each letter of the word in l
+        z = z + 1 #making the counter go up by one
     return z #told it what to return
 
 #
 # returns true if word begins with beginning otherwise false
 #
 def startsWith(word, beginning):# defined function and arguments
-    for x in range(0, length(beginning) ):#defined loop
-        if beginning[x] != word[x]:#told the compiler that if the beginning word was not equal to the regular word
+    for x in range(0, length(beginning) ):#defined loop that goes from 0 to the length of the word that we are testing
+        if beginning[x] != word[x]:#compared the letter that x is on in word and beginning then if  not equal return false 
             return False #return false
-    return True #but if it does equal the beginning return true
+    return True #if all the letters are equal return true
 
 #
 # This will return true if a string contains another smaller string and false if it doesnt
@@ -27,11 +27,11 @@ def contains(word, subWord):#defined function and arguments
    if length(word) < length (subWord):#if the length of the word is less than that of the subword return false
        return False
 
-   for y in range (0, length(word)):#defining loop
-        w =  word[y:]#defining counter
-        if startsWith (w, subWord):#this says that if word contains subword return true if not return false
-            return True
-   return False    
+   for y in range (0, length(word)):#defining loop that says start at zero and go untill the end of the length of word
+        w =  word[y:]#defining w initializes it to  all of the letters in the word
+        if startsWith (w, subWord):#this compares if word starts with the subword
+            return True #this says return true if it does contain 
+   return False    #this says that if the word does not contain the subword return false
 
 
 #
@@ -40,12 +40,12 @@ def contains(word, subWord):#defined function and arguments
 
 
 def mirror(word):#defining arguments and function
-    x = length(word) - 1 #defining counter
-    mirrorWord = [None] * length(word)#i dunno
-    for l in word:#defining loop
-        mirrorWord[x] = l  #i dunno
-        x = x - 1#starting the loop
-    return  ''.join(mirrorWord)#i dont know
+    x = length(word) - 1 #defining counter that is the length of the word minus 1
+    mirrorWord = [None] * length(word)#making an array that is the exact space of the word
+    for l in word:#making a loop that runs through all the letters
+        mirrorWord[x] = l  #storing the letter in mirrorWord at x
+        x = x - 1#starting the loop that goes down 1
+    return  ''.join(mirrorWord)#turning the mirrorword array into a string
 
 
 #
@@ -54,8 +54,6 @@ def mirror(word):#defining arguments and function
 
 
 def endsWith(word, subword):#defining the function and arguments
-    mirror(word)# telling the compiler to turn the word backewards by calling in the mirror word function
-    mirror(subword)#here it is telling the compiler to reverse the subword by calling the mirrror word iagain on the subword
     if startsWith(mirror(word), mirror(subword)):#here it is saying if the mirrored word starts with the mirrored subword return true if not return false
         return True
     else:
