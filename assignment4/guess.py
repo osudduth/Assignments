@@ -14,16 +14,18 @@
 #	
 
 from random import randint 
-
+guess = 0
 n = randint(1,100) 
 # assigns usernumber to somthing that n cannot be because it needs to be defined but not equal to n before the loop
 userNumber = -1
+
 while n != userNumber:
+	guess = guess + 1
 	userNumber = input('Choose a number between 1 and 100: ')
 	g = userNumber
 	userNumber = int(g)
 	if n == userNumber: 
-		print ("You guessed it!")
+		print ("You guessed it in " + str(guess) + " guesses!")
 	else:
 		if n < userNumber:
 			print ("Lower")
