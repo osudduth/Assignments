@@ -5,13 +5,19 @@
 #
 # Enhancements:
 #	Instead of printing too high or too low or you guessed it will say them as well1
-#	Asks you for your name and addresses you directly7
 #	Says top ten high scores6
-#	Better error handling of user input2
-#	give option to play again5
-#	let the user choose the range of numbers the user can guess4
+#	better user error handling
 #
 from random import randint
+import sys
+
+#
+#asks the user for a number and handles bad input
+#
+def inputInteger(upperBoundary):
+	while upperBoundary != int:
+		print ("Thats not a number you dumbass! :)")
+		userNumber = input('Choose a number between 1 and ' + str(upperBoundary) +', ' + name + ': ')
 
 def playgame(upperBoundary):
 	guess = 0
@@ -38,7 +44,7 @@ def playgame(upperBoundary):
 cont= True
 name = input('What is your name?: ')
 while cont:
-	upperBoundary = input('How high do you want to guess?: ')
+	upperBoundary = inputInteger(sys.maxsize)
 	playgame(int(upperBoundary))
 	answer = input('Press y to play again. Press any other letter to quit: ')
 	if answer != "y":
