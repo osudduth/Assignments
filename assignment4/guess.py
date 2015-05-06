@@ -11,17 +11,17 @@
 #	give option to play again5
 #	let the user choose the range of numbers the user can guess4
 #
-
 from random import randint
-def playgame():
+
+def playgame(upperBoundary):
 	guess = 0
-	n = randint(1,100)
+	n = randint(1, upperBoundary)
 	# assigns usernumber to somthing that n cannot be because it needs to be defined but not equal to n before the loop
 	userNumber = -1
 
 	while n != userNumber:
 		guess = guess + 1
-		userNumber = input('Choose a number between 1 and 100, ' + name + ': ')
+		userNumber = input('Choose a number between 1 and ' + str(upperBoundary) +', ' + name + ': ')
 		g = userNumber
 		userNumber = int(g)
 		if n == userNumber:
@@ -38,7 +38,8 @@ def playgame():
 cont= True
 name = input('What is your name?: ')
 while cont:
-	playgame()
+	upperBoundary = input('How high do you want to guess?: ')
+	playgame(int(upperBoundary))
 	answer = input('Press y to play again. Press any other letter to quit: ')
 	if answer != "y":
 		cont =  False
