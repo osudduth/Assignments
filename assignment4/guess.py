@@ -5,7 +5,6 @@
 #
 # Enhancements:
 #	Instead of printing too high or too low or you guessed it will say them as well1
-#	Says top ten high scores6
 #	better user error handling
 #
 from random import randint
@@ -15,9 +14,15 @@ import sys
 #asks the user for a number and handles bad input
 #
 def inputInteger(upperBoundary):
-	while upperBoundary != int:
-		print ("Thats not a number you dumbass! :)")
-		userNumber = input('Choose a number between 1 and ' + str(upperBoundary) +', ' + name + ': ')
+	while True:
+		try:
+			userNumber = int(input("Please enter a number: "))
+			break
+		except ValueError:
+			print("Oops!  That was no valid number.  Try again...")
+
+	return userNumber
+
 
 def playgame(upperBoundary):
 	guess = 0
@@ -27,7 +32,7 @@ def playgame(upperBoundary):
 
 	while n != userNumber:
 		guess = guess + 1
-		userNumber = input('Choose a number between 1 and ' + str(upperBoundary) +', ' + name + ': ')
+		userNumber = inputInteger(upperBoundary)
 		g = userNumber
 		userNumber = int(g)
 		if n == userNumber:
@@ -44,7 +49,7 @@ def playgame(upperBoundary):
 cont= True
 name = input('What is your name?: ')
 while cont:
-	upperBoundary = inputInteger(sys.maxsize)
+	upperBoundary = inputInteger(20)
 	playgame(int(upperBoundary))
 	answer = input('Press y to play again. Press any other letter to quit: ')
 	if answer != "y":
