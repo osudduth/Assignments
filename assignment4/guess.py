@@ -13,16 +13,16 @@ import sys
 #
 #asks the user for a number and handles bad input
 #
-def inputInteger(upperBoundary):
+def inputInteger(prompt):
 	while True:
 		try:
-			userNumber = int(input("Please enter a number: "))
+			userNumber = int(input(prompt))
 			break
 		except ValueError:
-			print("Oops!  That was no valid number.  Try again...")
+			print("\nOops!  That was no valid number.  Try again...\n")
 
 	return userNumber
-
+	
 
 def playgame(upperBoundary):
 	guess = 0
@@ -32,11 +32,11 @@ def playgame(upperBoundary):
 
 	while n != userNumber:
 		guess = guess + 1
-		userNumber = inputInteger(upperBoundary)
+		userNumber = inputInteger('\nChoose a number between 1 and ' + str(upperBoundary) +', ' + name + ': ')
 		g = userNumber
 		userNumber = int(g)
 		if n == userNumber:
-			print ("Nice job " + name + "! You guessed it in " + str(guess) + " guesses!")
+			print ("\nNice job " + name + "! You guessed it in " + str(guess) + " guesses!\n")
 		else:
 			if n < userNumber:
 				print ("Lower")
@@ -49,7 +49,7 @@ def playgame(upperBoundary):
 cont= True
 name = input('What is your name?: ')
 while cont:
-	upperBoundary = inputInteger(20)
+	upperBoundary = inputInteger("\nWhat is the highest number you want to guess to?  ")
 	playgame(int(upperBoundary))
 	answer = input('Press y to play again. Press any other letter to quit: ')
 	if answer != "y":
